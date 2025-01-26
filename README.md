@@ -76,94 +76,81 @@ Insertion Sort: [-50, -15, 23, 78, 102]
 The plot below displays the execution time in seconds against the array size. The performance of Insertion Sort for an array size of 12:
 ![image](https://github.com/user-attachments/assets/b181e225-d618-4ff7-b6d3-38b3246d982e)
 
-Implementation of Selection Sort
+# Selection Sort Implementation
 
-This program showcases how the Selection Sort algorithm works, taking as input random integer arrays to sort, as well as benchmarks execution time against various sizes for comparison.
+This program demonstrates the working of the Selection Sort algorithm by sorting randomly generated arrays of integers and benchmarking its execution time for varying array sizes.
 
-How it Works
+---
 
-Selection Sort Implementation:This is achieved in the selection_sort function by repeatedly identifying the smallest element in the unsorted portion of the array and placing it in its correct position.
+## How It Works
+1. **Selection Sort Overview:**
+   - The `selection_sort` function organizes the array by repeatedly finding the smallest element in the unsorted portion and swapping it with the leftmost unsorted element.
+   - During each iteration, the algorithm ensures that the leftmost portion of the array remains sorted.
 
-User Input:
+2. **User Input Description:**
+   - The program prompts the user to define the size of the array to be sorted.
+   - After receiving the input, it generates an array filled with random integers between -1000 and 1000 to demonstrate the sorting process.
 
-The user will define the number of elements.
+3. **Sorting Process:**
+   - **Iteration Details:**
+     - For each position in the array (starting from index 0):
+       1. Find the smallest element in the unsorted portion of the array.
+       2. Swap the smallest element with the element at the current position.
+     - The process repeats for all positions until the array is completely sorted.
 
-Creates a random integer array between the range of -1000 to 1000.
+   - **Detailed Example of Iterations:**
+     - Initial Array: `[102, -50, 23, 78, -15]`
+     1. **Iteration 1:**
+        - Find the smallest element (`-50`).
+        - Swap `-50` with `102`.
+        - Array after iteration: `[-50, 102, 23, 78, -15]`
+     2. **Iteration 2:**
+        - Find the smallest element in the unsorted portion (`-15`).
+        - Swap `-15` with `102`.
+        - Array after iteration: `[-50, -15, 23, 78, 102]`
+     3. **Iteration 3:**
+        - Find the smallest element in the unsorted portion (`23`).
+        - Swap `23` with `23` (no change).
+        - Array after iteration: `[-50, -15, 23, 78, 102]`
+     4. **Iteration 4:**
+        - Find the smallest element in the unsorted portion (`78`).
+        - Swap `78` with `78` (no change).
+        - Array after iteration: `[-50, -15, 23, 78, 102]`
 
-Loop Explanation:
+4. **Performance Benchmarking:**
+   - Execution time is measured for arrays of increasing sizes (from 1 to the user-defined array size).
+   - A plot is generated to visualize the relationship between array size and execution time.
 
-Loop through each of the elements of the array.
+---
 
-For the current index, identify the smallest element in the unsorted portion of the array.
+## Code Features
+- **Random Array Generation:**
+  - Arrays are generated with random integers within the range of -1000 to 1000 for sorting.
+  - For benchmarking, integers range from -100 to 100 to ensure faster computations for smaller arrays.
 
-Swap the smallest element with the element at the current index.
+- **Performance Measurement:**
+  - The program uses Python's `time` module to measure the time taken by the Selection Sort algorithm for various array sizes.
 
-Step-by-Step Iteration Example:
+- **Visualization:**
+  - The relationship between array size and execution time is plotted using `matplotlib`.
 
-Original Array: [102, -50, 23, 78, -15]
+---
 
-Iteration 1:
-
-Smallest element: -50
-
-Swap -50 with 102.
-
-Post-iteration array: [-50, 102, 23, 78, -15]
-
-Iteration 2:
-
-Smallest element: -15
-
-Swap -15 with 102.
-
-Array after pass: [-50, -15, 23, 78, 102]
-
-Iteration 3:
-
-Smallest element: 23
-
-No swap needed (already in the correct position).
-
-Result remains: [-50, -15, 23, 78, 102]
-
-Iteration 4:
-
-Smallest element: 78
-
-No swap needed (already in the correct position).
-
-Final sorted array: [-50, -15, 23, 78, 102]
-
-Performance Benchmarking:
-
-The execution time is recorded for arrays of different sizes ranging from 1 to the size defined by the user.
-
-A plot is created that shows the correlation between the array size and execution time.
-
-Code Features
-
-Generation of Random Array:
-
-Arrays will be generated filled with random integers in the range of -1000 to 1000 for sorting.
-
-Performance Measurement:The program will be using Python's time module to get the time consumed by the Selection Sort algorithm for different array sizes.
-
-Visualization:Plot of array size versus execution time is shown using matplotlib.
-
-Example Output
-
-User Input:
-
+## Example Output
+### User Input:
+```
 Enter the size of array: 5
+```
 
-Generated Output:
-
+### Generated Output:
+```
 Original Array: [102, -50, 23, 78, -15]
 Selection Sort: [-50, -15, 23, 78, 102]
+```
 
-Visualization:
+### Visualization:
+The plot below illustrates the execution time (in seconds) against the array size. The example shows the performance of Selection Sort for an array size of 12:
 
-The plot below displays the execution time in seconds against the array size. The performance of Selection Sort for an array size of 12:
 
 
 
